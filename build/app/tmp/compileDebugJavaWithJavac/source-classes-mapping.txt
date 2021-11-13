@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+ac/th/cp/su/uni_grade/BuildConfig.java
+ ac.th.cp.su.uni_grade.BuildConfig
