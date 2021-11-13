@@ -44,9 +44,9 @@ class _StudentMainPageState extends State<StudentMainPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
 
-                          Image.network(
+                         /* Image.network(
                             "https://i.pinimg.com/originals/ab/fb/ff/abfbff9f90fdfd34cb887a8aae18de97.png",
-                            height: 140,),
+                            height: 140,),*/
                           SizedBox(width: 10.0,),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

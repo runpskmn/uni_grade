@@ -25,76 +25,78 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: SafeArea(
-          child: Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Image.asset('assets/images/register/main.jpg'),
-                    const Text(
-                      "สร้างบัญชี",
-                      style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(
-                      height: 18.0,
-                    ),
-                    buildRoundedTextField( TextField(
-                      controller: _controller,
-                      decoration: const InputDecoration(
-                          icon: Icon(
-                            Icons.search,
-                            color: Colors.red,
-                          ),
-                          labelText: "รหัสนักศึกษา/อีเมลสำหรับอาจารย์",
-                          border: InputBorder.none
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: SafeArea(
+            child: Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Image.asset('assets/images/register/main.jpg'),
+                      const Text(
+                        "สร้างบัญชี",
+                        style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        textAlign: TextAlign.center,
                       ),
-                    )
-                    ),
-                    SizedBox(
-                      height: 8.0,
-                    ),
-                    ElevatedButton(
-                        child: Text("ถัดไป",
-                            style: TextStyle(fontSize: 16)),
-                        style: ButtonStyle(
-                            backgroundColor:
-                            MaterialStateProperty.all(Colors.red),
-                            padding:
-                            MaterialStateProperty.all<EdgeInsets>(
-                                EdgeInsets.all(10)),
-                            foregroundColor:
-                            MaterialStateProperty.all<Color>(
-                                Colors.white),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                ))),
-                        onPressed: () {
-                          if(_controller.text != '') {
-                            clickSearchButton();
-                          }else {
-                            _showMaterialDialog("ERROR!", "กรุณากรอกข้อมูล");
+                      SizedBox(
+                        height: 18.0,
+                      ),
+                      buildRoundedTextField( TextField(
+                        controller: _controller,
+                        decoration: const InputDecoration(
+                            icon: Icon(
+                              Icons.search,
+                              color: Colors.red,
+                            ),
+                            labelText: "รหัสนักศึกษา",
+                            border: InputBorder.none
+                        ),
+                      )
+                      ),
+                      SizedBox(
+                        height: 8.0,
+                      ),
+                      ElevatedButton(
+                          child: Text("ถัดไป",
+                              style: TextStyle(fontSize: 16)),
+                          style: ButtonStyle(
+                              backgroundColor:
+                              MaterialStateProperty.all(Colors.red),
+                              padding:
+                              MaterialStateProperty.all<EdgeInsets>(
+                                  EdgeInsets.all(10)),
+                              foregroundColor:
+                              MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                  ))),
+                          onPressed: () {
+                            if(_controller.text != '') {
+                              clickSearchButton();
+                            }else {
+                              _showMaterialDialog("ERROR!", "กรุณากรอกข้อมูล");
+                            }
                           }
-                        }
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              if(_isLoading)
-                SpinKitWave(
-                  color: Colors.red.withOpacity(0.85),
-                  size: 40.0,
-                )
-            ],
+                if(_isLoading)
+                  SpinKitWave(
+                    color: Colors.red.withOpacity(0.85),
+                    size: 40.0,
+                  )
+              ],
+            ),
           ),
         ),
       ),
