@@ -64578,7 +64578,7 @@ var $async$ti=P.V(function(a,b){if(a===1){o=b
 s=p}while(true)switch(s){case 0:p=4
 m.aF(new F.a7Q(m))
 s=7
-return P.a3(new A.k9().m3(0,"register",P.aw(["stdID","","username",m.r.a.a,"password",m.x.a.a,"status",""],t.N,t.z)),$async$ti)
+return P.a3(new A.k9().m3(0,"register",P.aw(["stdID","","username",m.r.a.a,"password",m.x.a.a,"status","std"],t.N,t.z)),$async$ti)
 case 7:l=b
 P.ex(J.cD(l))
 q=l
