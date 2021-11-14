@@ -28,6 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
+          height: MediaQuery.of(context).size.height,
           child: SafeArea(
             child: Stack(
               children: [

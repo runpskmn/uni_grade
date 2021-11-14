@@ -15,7 +15,8 @@ class SchedulePage extends StatefulWidget {
 
 class _SchedulePageState extends State<SchedulePage> {
   List<String> dayList = ["จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์", "อาทิตย์"];
-  List<Color> colorList = [Colors.yellow.shade300, Colors.pink.shade300, Colors.green.shade300, Colors.orange.shade300, Colors.blue.shade300, Colors.purple.shade300, Colors.red.shade500];
+  List<Color> colorList = [Colors.yellow.shade300, Colors.pink.shade300, Colors.green.shade300,
+    Colors.orange.shade300, Colors.blue.shade300, Colors.purple.shade300, Colors.red.shade500];
   late PersonItem ?_userData;
   List<SubjectItem> _subList = [];
   bool _isLoading = false;
@@ -72,31 +73,6 @@ class _SchedulePageState extends State<SchedulePage> {
             size: 40.0,
           )
       ],
-    );
-  }
-
-  void _showMaterialDialog(String title, String msg) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Text(msg, style: Theme
-              .of(context)
-              .textTheme
-              .bodyText2),
-          actions: [
-            // ปุ่ม OK ใน dialog
-            TextButton(
-              child: const Text('OK'),
-              onPressed: () {
-                // ปิด dialog
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
     );
   }
 

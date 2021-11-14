@@ -21,7 +21,7 @@ class _RegisterInfoPageState extends State<RegisterInfoPage> {
   final _addressController = TextEditingController();
   bool _isLoading = false;
   String _stdID = '';
-  String _status = '';
+  String _status = 'std';
 
 
   @override
@@ -31,13 +31,7 @@ class _RegisterInfoPageState extends State<RegisterInfoPage> {
     _emailController.text = args[0]['email'];
     _telController.text = args[0]['phoneNo'];
     _addressController.text = args[0]['address'];
-    setState(() {
-      _status = args[0]['status'];
-      if(_status == 'std')
-        _stdID = args[0]['stdID'];
-      else
-        _stdID = args[0]['pID'];
-    });
+
 
     return Scaffold(
       body: SingleChildScrollView(
