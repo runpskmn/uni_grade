@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uni_grade/models/person_item.dart';
+import 'package:uni_grade/pages/grade_page/grade_page.dart';
 import 'package:uni_grade/pages/home_page/std_main_page.dart';
 import 'package:uni_grade/pages/schedule_page/schedule_page.dart';
 
@@ -18,16 +19,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as PersonItem;
-    var pageList = [StudentMainPage(userData: args), SchedulePage(), StudentMainPage(userData: args)];
+    var pageList = [StudentMainPage(userData: args), SchedulePage(userData: args), GradePage(userData: args)];
 
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black, //change your color here
-        ),
-        backgroundColor: Colors.white.withOpacity(0.25),
-        elevation: 0.0,
-      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
@@ -49,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         onTap: _onItemTapped,
       ),
       body: Container(
-        height: MediaQuery.of(context).size.height-160,
+        height: MediaQuery.of(context).size.height,
         color: Colors.white,
         child: SafeArea(
           child: pageList[_subPageIndex]

@@ -16,7 +16,6 @@ class StudentMainPage extends StatefulWidget {
 
 class _StudentMainPageState extends State<StudentMainPage> {
   late PersonItem ?_userData;
-  bool _isLoading = false;
   List<SubjectItem> _subList = [];
   int _credit = 0;
 
@@ -130,9 +129,6 @@ class _StudentMainPageState extends State<StudentMainPage> {
   }
 
   void _getData() async {
-    setState(() {
-      _isLoading = true;
-    });
       var data = await Api().fetch('reg_subject', queryParams: {
         'year': '2564',
         'term': '1',
@@ -142,9 +138,8 @@ class _StudentMainPageState extends State<StudentMainPage> {
   setState(() {
     for(int i=0;i<data.length;++i) {
       _subList.add(SubjectItem.fromMap(data[i]));
-      _credit += _subList[0].credit;
+      _credit += _subList[i].credit;
     }
-    _isLoading = false;
   });
 }
 

@@ -166,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
           status: 'std'
       );
 
-    Navigator.pushNamed(
+    Navigator.pushReplacementNamed(
       context,
       HomePage.routeName,
       arguments: _userData,
